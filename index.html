@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Parking System — SRS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <div class="logo-mark">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="3" y="3" width="14" height="14" rx="3" stroke="white" stroke-width="1.5" />
+                        <path d="M7 10.5V13M10 8.5V13M13 11.5V13" stroke="white" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <circle cx="10" cy="6" r="1.2" fill="#e8651a" />
+                    </svg>
+                </div>
+                <span class="logo-text">Easy Parking</span>
+            </div>
+            <span class="doc-badge">SRS Website</span>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-left">
+                <div class="eyebrow">Software Requirements Specification</div>
+                <h1>Easy<br /><span>Parking</span><br />System</h1>
+                <p class="hero-desc">
+                    Software Requirements Specification aligned with IEEE Std 830,
+                    defining functional behavior, interfaces, quality attributes,
+                    constraints, and delivery expectations for the Easy Parking platform.
+                </p>
+            </div>
+            <div class="hero-right">
+                <div class="version-card">
+                    <div class="label">Version</div>
+                    <div class="value">1.0</div>
+                    <div class="divider"></div>
+                    <div class="label">Prepared by</div>
+                    <div class="meta">Faculty of Computer<br />and Information</div>
+                    <div class="divider"></div>
+                    <div class="label">Date</div>
+                    <div class="meta">April 2026</div>
+                    <div class="divider"></div>
+                    <div class="label">Standard</div>
+                    <div class="meta standard">IEEE Std 830</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="quick-nav" aria-label="Section navigation">
+            <a href="#ch1">Introduction</a>
+            <a href="#ch2">Overall Description</a>
+            <a href="#ch3">Interfaces</a>
+            <a href="#ch4">System Features</a>
+            <a href="#ch5">Non-functional</a>
+            <a href="#ch6">Other Requirements</a>
+            <a href="#appendix-a">Appendix A</a>
+        </nav>
+
+        <!-- SCOPE STRIP -->
+        <div class="scope-strip">
+            <div class="scope-item">
+                <div class="scope-icon orange">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M9 2C5.13 2 2 5.13 2 9s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7z" stroke="#e8651a"
+                            stroke-width="1.3" />
+                        <path d="M9 6v4l2.5 1.5" stroke="#e8651a" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="scope-label">Status</div>
+                    <div class="scope-val">Draft v1.0</div>
+                </div>
+            </div>
+            <div class="scope-item">
+                <div class="scope-icon green">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="2" y="4" width="14" height="11" rx="2" stroke="#1a6b3a" stroke-width="1.3" />
+                        <path d="M6 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#1a6b3a" stroke-width="1.3" />
+                        <path d="M5.5 9.5h7M5.5 12h4" stroke="#1a6b3a" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="scope-label">Platform</div>
+                    <div class="scope-val">Mobile and Web</div>
+                </div>
+            </div>
+            <div class="scope-item">
+                <div class="scope-icon ink">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="6.5" stroke="#0d1117" stroke-width="1.3" />
+                        <path d="M9 5.5v4l2 2" stroke="#0d1117" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="scope-label">Users</div>
+                    <div class="scope-val">3 User Roles</div>
+                </div>
+            </div>
+            <div class="scope-item">
+                <div class="scope-icon orange">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M9 2l1.8 5.4H17l-4.9 3.6 1.9 5.5L9 13l-5 3.5 1.9-5.5L2 7.4h6.2z" stroke="#e8651a"
+                            stroke-width="1.2" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="scope-label">Standard</div>
+                    <div class="scope-val">IEEE Std 830</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCUMENT SECTIONS -->
+        <div class="sections-label">Document sections</div>
+        <div class="sections-grid">
+            <a class="section-card" href="#ch1" data-num="01">
+                <div class="s-tag">Ch. 1</div>
+                <div class="s-title">Introduction &amp; Purpose</div>
+            </a>
+            <a class="section-card" href="#ch2" data-num="02">
+                <div class="s-tag">Ch. 2</div>
+                <div class="s-title">Overall Description</div>
+            </a>
+            <a class="section-card" href="#ch3" data-num="03">
+                <div class="s-tag">Ch. 3</div>
+                <div class="s-title">External Interface Requirements</div>
+            </a>
+            <a class="section-card" href="#ch4" data-num="04">
+                <div class="s-tag">Ch. 4</div>
+                <div class="s-title">System Features &amp; Use Cases</div>
+            </a>
+            <a class="section-card" href="#ch5" data-num="05">
+                <div class="s-tag">Ch. 5</div>
+                <div class="s-title">Non-functional Requirements</div>
+            </a>
+            <a class="section-card" href="#appendix-a" data-num="06">
+                <div class="s-tag">App. A</div>
+                <div class="s-title">Glossary &amp; Business Rules</div>
+            </a>
+        </div>
+
+        <!-- USER ROLES -->
+        <div class="users-label">System user roles</div>
+        <div class="users-row">
+            <div class="user-card admin">
+                <div class="user-avatar">AD</div>
+                <div class="user-role">Admin</div>
+                <div class="user-desc">Full system access — manages users, databases, encryption, audit logs, and
+                    backups without restriction.</div>
+            </div>
+            <div class="user-card owner">
+                <div class="user-avatar">PO</div>
+                <div class="user-role">Parking Owner</div>
+                <div class="user-desc">Manages parking lots, sets rates, monitors health, configures alerts, and
+                    generates reports.</div>
+            </div>
+            <div class="user-card driver">
+                <div class="user-avatar">CO</div>
+                <div class="user-role">Car Owner</div>
+                <div class="user-desc">Reserves spaces, makes payments, cancels or extends bookings, and navigates to
+                    parking locations.</div>
+            </div>
+        </div>
+
+        <!-- TECH STACK -->
+        <div class="tech-row">
+            <div class="tech-pill"><span class="dot dot-blue"></span>Flutter SDK</div>
+            <div class="tech-pill"><span class="dot dot-red"></span>Django Backend</div>
+            <div class="tech-pill"><span class="dot dot-orange"></span>MySQL / PostgreSQL</div>
+            <div class="tech-pill"><span class="dot dot-purple"></span>Firebase Auth</div>
+            <div class="tech-pill"><span class="dot dot-green"></span>Google Maps API</div>
+            <div class="tech-pill"><span class="dot dot-blue"></span>REST API</div>
+        </div>
+
+        <main class="srs-content">
+            <section class="chapter" id="revision-history">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">April 2026</div>
+                    <h2>Revision History</h2>
+                </div>
+                <div class="data-table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Prepared By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.0</td>
+                                <td>April 2026</td>
+                                <td>Initial SRS baseline for Easy Parking System</td>
+                                <td>Project Team</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="chapter" id="ch1">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Chapter 1</div>
+                    <h2>Introduction</h2>
+                </div>
+
+                <article class="subsection" id="ch1-1">
+                    <h3>1.1 Purpose</h3>
+                    <p>This Software Requirements Specification (SRS) provides a comprehensive description of the
+                        requirements for the Easy Parking System. It establishes a shared understanding between the
+                        development team and stakeholders regarding the system behavior, constraints, and quality
+                        attributes.</p>
+                    <p>The SRS is the baseline for design, implementation, and testing. The development team uses it to
+                        build software that matches user expectations, while stakeholders use it to validate outcomes
+                        and request changes when expectations are not met.</p>
+                </article>
+
+                <article class="subsection" id="ch1-2">
+                    <h3>1.2 Document Conventions</h3>
+                    <ul class="clean-list">
+                        <li>Major sections use hierarchical numbering (for example 1.0, 1.1, 2.3.1).</li>
+                        <li>Mandatory requirements are expressed with "shall" and recommendations with "should".</li>
+                        <li>Actor names (Administrator, Parking Lot Owner, Car Owner) are capitalized for clarity.</li>
+                        <li>Diagram placeholders identify required artifacts to be inserted before final approval.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch1-3">
+                    <h3>1.3 Intended Audience and Reading Suggestions</h3>
+                    <p>This document is intended for development team members, parking lot owners, car owners, project
+                        supervisors, and academic evaluators.</p>
+                    <div class="split-grid">
+                        <div class="soft-card">
+                            <h4>Audience</h4>
+                            <ul class="clean-list">
+                                <li>Development team: use to understand requirements and design.</li>
+                                <li>Parking lot owners: verify the platform supports operations.</li>
+                                <li>Car owners: understand booking, payment, and navigation capabilities.</li>
+                                <li>Supervisors and evaluators: review scope and compliance.</li>
+                            </ul>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Recommended Reading Order</h4>
+                            <ul class="clean-list">
+                                <li>Section 1 (Introduction) for all readers.</li>
+                                <li>Section 2 (Overall Description) for stakeholders and developers.</li>
+                                <li>Sections 3 and 4 (Interfaces and Features) for developers and testers.</li>
+                                <li>Section 5 (Non-functional Requirements) for architects and QA engineers.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch1-4">
+                    <h3>1.4 Product Scope</h3>
+                    <p>The Easy Parking System is a mobile and web platform that automates parking lot operations and
+                        helps reduce traffic congestion. It provides real-time availability, online reservation, payment
+                        processing, and navigation support.</p>
+                    <p>The solution supports three user roles with role-based access control: Administrator, Parking Lot
+                        Owner, and Car Owner.</p>
+                </article>
+
+                <article class="subsection" id="ch1-5">
+                    <h3>1.5 References</h3>
+                    <ul class="clean-list">
+                        <li>IEEE Std 830: Recommended Practice for Software Requirements Specifications.</li>
+                        <li>Flutter documentation for cross-platform client development.</li>
+                        <li>Django documentation for backend services and APIs.</li>
+                        <li>Firebase Authentication documentation for identity services.</li>
+                        <li>Google Maps Platform documentation for geolocation and navigation.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="chapter" id="ch2">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Chapter 2</div>
+                    <h2>Overall Description</h2>
+                </div>
+
+                <article class="subsection" id="ch2-1">
+                    <h3>2.1 Product Perspective</h3>
+                    <p>The Easy Parking System is a self-contained software product designed to replace manual parking
+                        management with a digital workflow. It consists of a Flutter mobile client and web interfaces, a
+                        Django backend, Firebase authentication, Google Maps integration, and relational database
+                        storage.</p>
+                </article>
+
+                <article class="subsection" id="ch2-2">
+                    <h3>2.2 Product Functions</h3>
+                    <div class="data-table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>User Role</th>
+                                    <th>Primary Functions</th>
+                                    <th>Scope</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Administrator</td>
+                                    <td>Full CRUD, audit monitoring, backup and restore, configuration, incident
+                                        response</td>
+                                    <td>System-wide</td>
+                                </tr>
+                                <tr>
+                                    <td>Parking Lot Owner</td>
+                                    <td>Manage lots, pricing, schedules, alerts, and facility-level reports</td>
+                                    <td>Own facilities only</td>
+                                </tr>
+                                <tr>
+                                    <td>Car Owner</td>
+                                    <td>Search, reserve, pay, cancel, extend booking, receive QR and notifications</td>
+                                    <td>Personal bookings only</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="note">Limited scope applies: parking lot owners manage only their own operational users,
+                        and car owners can access only personal booking summaries.</p>
+                </article>
+
+                <article class="subsection" id="ch2-3">
+                    <h3>2.3 User Classes and Characteristics</h3>
+                    <div class="subsubsection">
+                        <h4>2.3.1 Administrator</h4>
+                        <ul class="clean-list">
+                            <li>Full privileges with no restriction across all entities and reports.</li>
+                            <li>Manages audit logs, global configuration, backups, and encryption keys.</li>
+                            <li>Coordinates external integrations and incident response workflows.</li>
+                        </ul>
+                    </div>
+                    <div class="subsubsection">
+                        <h4>2.3.2 Parking Lot Owner</h4>
+                        <ul class="clean-list">
+                            <li>Manages own parking locations, pricing, schedules, and facility settings.</li>
+                            <li>Monitors operations through alerts, usage dashboards, and custom reports.</li>
+                            <li>Cannot access system-wide administration or other owners' data.</li>
+                        </ul>
+                    </div>
+                    <div class="subsubsection">
+                        <h4>2.3.3 Car Owner</h4>
+                        <ul class="clean-list">
+                            <li>Searches and books spaces by location, time, and availability.</li>
+                            <li>Pays using cards or digital wallets and receives ticket confirmation.</li>
+                            <li>Can cancel or extend reservations and navigate to selected destinations.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch2-4">
+                    <h3>2.4 Operating Environment</h3>
+                    <div class="split-grid">
+                        <div class="soft-card">
+                            <h4>2.4.1 Hardware Requirements</h4>
+                            <ul class="clean-list">
+                                <li>Android or iOS smartphones/tablets for end users.</li>
+                                <li>Cloud or on-premise server infrastructure for API and data services.</li>
+                                <li>Optional printer hardware for invoices and operational reports.</li>
+                            </ul>
+                        </div>
+                        <div class="soft-card">
+                            <h4>2.4.2 Software Requirements</h4>
+                            <ul class="clean-list">
+                                <li>Flutter client runtime.</li>
+                                <li>Django backend with REST endpoints.</li>
+                                <li>MySQL or PostgreSQL database engine.</li>
+                                <li>Firebase authentication and Google Maps APIs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch2-5">
+                    <h3>2.5 Design and Implementation Constraints</h3>
+                    <ul class="clean-list">
+                        <li>Android availability is required; iOS support is planned in future releases.</li>
+                        <li>Minimum device memory requirement is 50 MB, with additional memory recommended.</li>
+                        <li>The system must remain usable for non-technical users with clear and accessible interfaces.
+                        </li>
+                        <li>The platform must operate reliably under concurrent load without major degradation.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch2-6">
+                    <h3>2.6 Project Documentation</h3>
+                    <ul class="clean-list">
+                        <li>Software Requirements Specification (this document).</li>
+                        <li>Architecture and database design documentation.</li>
+                        <li>Test plan, test cases, and acceptance evidence.</li>
+                        <li>Deployment guide and operations handbook.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch2-7">
+                    <h3>2.7 Assumptions and Dependencies</h3>
+                    <ul class="clean-list">
+                        <li>Users in all roles maintain valid email accounts for notifications.</li>
+                        <li>Reliable internet connectivity is available for server and client devices.</li>
+                        <li>Google Maps API and Firebase services remain available.</li>
+                        <li>Architecture supports future updates and feature expansion post-launch.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch2-8">
+                    <h3>2.8 AI Enhancements</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Parking Availability Prediction</h4>
+                            <p>Machine learning can estimate expected occupancy using historical utilization patterns.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>License Plate Recognition</h4>
+                            <p>Computer vision can automate gate entry and exit while recording timestamps.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Abnormal Behavior Detection</h4>
+                            <p>AI models can identify suspicious or policy-violating parking activity for
+                                administrators.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="chapter" id="ch3">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Chapter 3</div>
+                    <h2>External Interface Requirements</h2>
+                </div>
+
+                <article class="subsection" id="ch3-1">
+                    <h3>3.1 User Interfaces</h3>
+                    <p>Interfaces are role-based with a consistent visual system, responsive layout behavior, and
+                        accessibility-aware navigation.</p>
+                    <div class="split-grid">
+                        <div class="soft-card">
+                            <h4>3.1.1 Car Owner Interfaces</h4>
+                            <ul class="clean-list">
+                                <li>Search and map discovery screens.</li>
+                                <li>Reservation, payment, and booking history workflows.</li>
+                                <li>Notification and profile management pages.</li>
+                            </ul>
+                        </div>
+                        <div class="soft-card">
+                            <h4>3.1.2 Parking Lot Owner Interface</h4>
+                            <ul class="clean-list">
+                                <li>Facility dashboards and occupancy controls.</li>
+                                <li>Rate configuration and schedule management.</li>
+                                <li>Alerts and operational reporting views.</li>
+                            </ul>
+                        </div>
+                        <div class="soft-card">
+                            <h4>3.1.3 Admin Interface</h4>
+                            <ul class="clean-list">
+                                <li>System administration and user governance pages.</li>
+                                <li>Audit logs and backup management screens.</li>
+                                <li>Platform-level settings and monitoring tools.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch3-2">
+                    <h3>3.2 Hardware Interfaces</h3>
+                    <ul class="clean-list">
+                        <li>Smartphones and tablets running the Flutter client application.</li>
+                        <li>Server infrastructure hosting Django and database services.</li>
+                        <li>Laser printer support for bills and formal reports.</li>
+                        <li>Broadband networking for real-time communication and email alerts.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch3-3">
+                    <h3>3.3 Software Interfaces</h3>
+                    <ul class="clean-list">
+                        <li>Django REST API as the central integration layer.</li>
+                        <li>Firebase Authentication for user identity and session security.</li>
+                        <li>Google Maps services for geocoding and navigation display.</li>
+                        <li>Relational database (MySQL or PostgreSQL) for persistence.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch3-4">
+                    <h3>3.4 Communications Interfaces</h3>
+                    <ul class="clean-list">
+                        <li>HTTPS with TLS 1.2 or higher for all app and backend communication.</li>
+                        <li>SMTP over TLS for outbound notifications and reservation events.</li>
+                        <li>WebSocket or Firebase channels for real-time availability updates.</li>
+                        <li>Minimum 10 Mbps internet recommended for stable map and API performance.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="chapter" id="ch4">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Chapter 4</div>
+                    <h2>System Features</h2>
+                </div>
+
+                <article class="subsection" id="ch4-1">
+                    <h3>4.1 E-R Diagram</h3>
+                    <div class="placeholder-box">Insert E-R Diagram image exported from the selected modeling tool.
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch4-2">
+                    <h3>4.2 Use Case Diagram</h3>
+                    <div class="placeholder-box">Insert Use Case Diagram image.</div>
+                </article>
+
+                <article class="subsection" id="ch4-3">
+                    <h3>4.3 Information System Architecture</h3>
+                    <div class="placeholder-box">Insert high-level architecture diagram.</div>
+                </article>
+
+                <article class="subsection" id="ch4-4">
+                    <h3>4.4 Use Case Scenarios</h3>
+                    <div class="split-grid">
+                        <div class="soft-card">
+                            <h4>Use Case 1</h4>
+                            <p>Make Booking</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Use Case 2</h4>
+                            <p>Cancel Booking</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Use Case 3</h4>
+                            <p>Extend Booking</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Use Case 4</h4>
+                            <p>Pay the Bill</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Use Case 5</h4>
+                            <p>Manage Parking Lot</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch4-5">
+                    <h3>4.5 Activity Diagrams</h3>
+                    <p>The following activity diagrams should describe the flow of the major booking and parking
+                        management processes.</p>
+                    <div class="placeholder-box">Insert activity diagrams for each selected process.</div>
+                </article>
+            </section>
+
+            <section class="chapter" id="ch5">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Chapter 5</div>
+                    <h2>Non-functional Requirements</h2>
+                </div>
+
+                <article class="subsection" id="ch5-1">
+                    <h3>5.1 Performance Requirements</h3>
+                    <ul class="clean-list">
+                        <li>Availability checks should return within 2 seconds under normal load.</li>
+                        <li>Booking confirmation should complete within 5 seconds after payment approval.</li>
+                        <li>The platform should support concurrent users without major response degradation.</li>
+                        <li>Daily backups must complete within scheduled maintenance windows.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch5-2">
+                    <h3>5.2 Safety Requirements</h3>
+                    <ul class="clean-list">
+                        <li>Role-based login screens restrict system capabilities by user type.</li>
+                        <li>Automated backups and restoration procedures protect data integrity.</li>
+                        <li>Sensitive operations (deletion and payment actions) require explicit confirmation.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch5-3">
+                    <h3>5.3 Security Requirements</h3>
+                    <ul class="clean-list">
+                        <li>All client-server traffic must use HTTPS with TLS 1.2+.</li>
+                        <li>Passwords must be hashed using bcrypt or Argon2.</li>
+                        <li>Payment processing must satisfy PCI DSS compliance obligations.</li>
+                        <li>Admin and owner sessions expire after 30 minutes of inactivity.</li>
+                        <li>All APIs enforce validation and protections against SQL injection and XSS.</li>
+                        <li>Audit logs must be retained for at least 90 days.</li>
+                    </ul>
+                </article>
+
+                <article class="subsection" id="ch5-4">
+                    <h3>5.4 Software Quality Attributes</h3>
+                    <div class="split-grid">
+                        <div class="soft-card">
+                            <h4>Reliability</h4>
+                            <p>Predictable behavior with fault-tolerant recovery processes.</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Usability</h4>
+                            <p>Clear workflows for non-technical users across all roles.</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Maintainability</h4>
+                            <p>Modular architecture and documented APIs for safe evolution.</p>
+                        </div>
+                        <div class="soft-card">
+                            <h4>Scalability</h4>
+                            <p>Capacity to support more users, facilities, and transactions.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="subsection" id="ch5-5">
+                    <h3>5.5 Business Rules</h3>
+                    <ul class="clean-list">
+                        <li>Privileges are ordered as Administrator, Parking Lot Owner, then Car Owner.</li>
+                        <li>Only Administrators can delete accounts, garages, and access system-wide finance reports.
+                        </li>
+                        <li>Owners can manage only their own garages and associated operations.</li>
+                        <li>Car Owners must complete email verification before the first booking.</li>
+                        <li>Refund-eligible cancellation is allowed up to 1 hour before reservation start.</li>
+                        <li>Advance payment is required and unpaid bookings expire after 15 minutes.</li>
+                        <li>Email notifications are required for confirmation, payment receipt, cancellation, and
+                            reminders.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="chapter" id="ch6">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Chapter 6</div>
+                    <h2>Other Requirements</h2>
+                </div>
+                <article class="subsection">
+                    <ul class="clean-list">
+                        <li>Training sessions are required for all primary user roles after delivery.</li>
+                        <li>Development team support is required for an agreed post-launch period.</li>
+                        <li>All clients must maintain active email accounts for system communication.</li>
+                        <li>A printed user manual in plain language must be delivered with the system.</li>
+                        <li>The system must be monitored post-launch for bugs, performance issues, and enhancements.
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="chapter" id="appendix-a">
+                <div class="chapter-header">
+                    <div class="chapter-kicker">Appendix A</div>
+                    <h2>Glossary</h2>
+                </div>
+                <article class="subsection">
+                    <div class="data-table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Definition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>RBAC</td>
+                                    <td>Role-Based Access Control used to enforce feature permissions by user role.</td>
+                                </tr>
+                                <tr>
+                                    <td>Reservation Window</td>
+                                    <td>The allowed time interval in which users can reserve, modify, or cancel parking.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Occupancy Rate</td>
+                                    <td>Percentage of available spaces currently occupied in a parking facility.</td>
+                                </tr>
+                                <tr>
+                                    <td>Audit Log</td>
+                                    <td>Immutable record of system actions and user activities for traceability.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-left">
+                <strong>Easy Parking System</strong>
+                Software Requirements Specification · Version 1.0 · 2026
+            </div>
+            <div class="ieee-badge">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <rect x="1" y="1" width="12" height="12" rx="2" stroke="#3a3f4a" stroke-width="1.2" />
+                    <path d="M4 7h6M7 4v6" stroke="#3a3f4a" stroke-width="1.2" stroke-linecap="round" />
+                </svg>
+                Prepared per IEEE Std 830
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
